@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Generics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Generics;
 
 namespace UnitTestProject1
 {
@@ -42,10 +41,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void Overwrite_When_More_Than_Capacity()
         {
-            var buffer = new CircularBuffer(capacity : 3);
+            var buffer = new CircularBuffer(capacity: 3);
             var values = new[] { 1.0, 2.0, 3.0, 4.0, 5.0 };
 
-            foreach(var value in values)
+            foreach (var value in values)
             {
                 buffer.Write(value);
             }

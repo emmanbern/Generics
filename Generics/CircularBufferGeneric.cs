@@ -1,9 +1,9 @@
 ﻿namespace Generics
 {
-    public class CircularBuffer : ICircularBuffer
+    public class CircularBufferGeneric<T> : ICircularBufferGeneric<T>
     {
 
-        private double[] _buffer;
+        private T[] _buffer;
         private int _start;
         private int _end;
         private int _capacity;
@@ -23,19 +23,19 @@
             get { return (_end + 1) % _buffer.Length == _start; }
         }
 
-        public CircularBuffer() : this(capacity: 10)
+        public CircularBufferGeneric() : this(capacity: 10)
         {
         }
 
-        public CircularBuffer(int capacity)
+        public CircularBufferGeneric(int capacity)
         {
-            _buffer = new double[capacity + 1];
+            _buffer = new T[capacity + 1];
             _start = 0;
             _end = 0;
             _capacity = capacity;
         }
 
-        public void Write(double value)
+        public void Write(T value)
         {
             _buffer[_end] = value;
             _end = (_end + 1) % _buffer.Length;
@@ -46,7 +46,7 @@
 
         }
 
-        public double Read()
+        public T Read()
         {
             var result = _buffer[_start];
             _start = (_start + 1) % _buffer.Length;

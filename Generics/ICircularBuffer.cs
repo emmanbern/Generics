@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Generics
+﻿namespace Generics
 {
     public interface ICircularBuffer
     {
         void Write(double value);
 
         double Read();
-
-
     }
 }

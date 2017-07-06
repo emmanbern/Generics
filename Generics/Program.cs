@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Generics
 {
@@ -10,7 +6,7 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            var buffer = new CircularBuffer(capacity: 3);
+            var buffer = new CircularBufferGeneric<double>(capacity: 3);
 
             while (true)
             {
