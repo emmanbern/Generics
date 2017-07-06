@@ -1,6 +1,6 @@
 ﻿namespace Generics
 {
-    public interface ICircularBufferGeneric<T>
+    public interface IBuffer<T>
     {
         bool IsEmpty { get; }
 

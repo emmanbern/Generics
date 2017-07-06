@@ -1,8 +1,10 @@
-﻿namespace Generics
+﻿using System.Collections.Generic;
+
+namespace Generics
 {
     public class CircularBufferGeneric<T> : ICircularBufferGeneric<T>
     {
-
+       
         private T[] _buffer;
         private int _start;
         private int _end;
