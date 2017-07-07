@@ -1,57 +1,30 @@
 ﻿namespace Generics
 {
-    public class CircularBuffer : ICircularBuffer
+    public class CircularBuffer<T> : Buffer<T>
     {
+        int _capacity;
 
-        private double[] _buffer;
-        private int _start;
-        private int _end;
-        private int _capacity;
+        public bool IsFull { get { return _queue.Count == _capacity; } }
 
-        public int Capacity
+        public CircularBuffer()
         {
-            get { return _buffer.Length; }
+
         }
 
-        public bool IsEmpty
+        public CircularBuffer(int capacity = 10)
         {
-            get { return _end == _start; }
-        }
-
-        public bool IsFull
-        {
-            get { return (_end + 1) % _buffer.Length == _start; }
-        }
-
-        public CircularBuffer() : this(capacity: 10)
-        {
-        }
-
-        public CircularBuffer(int capacity)
-        {
-            _buffer = new double[capacity + 1];
-            _start = 0;
-            _end = 0;
             _capacity = capacity;
         }
 
-        public void Write(double value)
+        public override void Write(T value)
         {
-            _buffer[_end] = value;
-            _end = (_end + 1) % _buffer.Length;
-            if (_end == _start)
+            base.Write(value);
+            if (_queue.Count > _capacity)
             {
-                _start = (_start + 1) % _buffer.Length;
+                _queue.Dequeue();
             }
-
         }
 
-        public double Read()
-        {
-            var result = _buffer[_start];
-            _start = (_start + 1) % _buffer.Length;
-            return result;
-        }
 
     }
 }
