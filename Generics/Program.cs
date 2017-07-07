@@ -6,14 +6,21 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            var buffer = new CircularBufferGeneric<double>(capacity: 3);
+            var buffer = new CircularBuffer<double>(capacity: 3);
 
             processInput(buffer);
 
+            foreach (var item in buffer)
+            {
+                Console.WriteLine(buffer);
+            }
+
             processBuffer(buffer);
+
+            Console.ReadLine();
         }
 
-        private static void processBuffer(ICircularBufferGeneric<double> buffer)
+        private static void processBuffer(IBuffer<double> buffer)
         {
             var sum = 0.0;
             Console.WriteLine("Buffer: ");
@@ -24,7 +31,7 @@ namespace Generics
             Console.WriteLine(sum);
         }
 
-        private static void processInput(ICircularBufferGeneric<double> buffer)
+        private static void processInput(IBuffer<double> buffer)
         {
             while (true)
             {
