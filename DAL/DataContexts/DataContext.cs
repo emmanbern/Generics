@@ -1,7 +1,7 @@
 ﻿using Model;
 using System.Data.Entity;
 
-namespace DAL
+namespace DAL.DataContexts
 {
     public class DataContext : DbContext
     {
