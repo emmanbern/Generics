@@ -1,5 +1,5 @@
 ﻿using DAL.DataContexts;
-using DAL.IRepositories;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace DAL.Repositories
 {
-    abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         protected readonly DataContext _context;
 
