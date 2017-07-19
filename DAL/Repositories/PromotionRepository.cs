@@ -4,10 +4,9 @@ using Model;
 
 namespace DAL.Repositories
 {
-    public class ProductRepository : BaseRepository<Product>, IProductRepository
+    public class PromotionRepository : BaseRepository<Promotion>, IPromotionRepository
     {
-        public ProductRepository(DataContext context)
-            : base(context)
+        public PromotionRepository(DataContext context) : base(context)
         {
         }
 

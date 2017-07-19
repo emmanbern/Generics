@@ -1,7 +1,7 @@
-﻿using System;
-using DAL.DataContexts;
+﻿using DAL.DataContexts;
 using DAL.Repositories;
-using Interfaces;
+using Interfaces.DAL;
+using Interfaces.Repositories;
 
 namespace DAL.UnitOfWorks
 {
@@ -9,14 +9,14 @@ namespace DAL.UnitOfWorks
     {
         private readonly DataContext _context;
 
-        public IProductRepository Products { get; set; }
-
-        IProductRepository IUnitOfWork.Products => throw new NotImplementedException();
+        public IProductRepository Products { get; }
+        public IPromotionRepository Promotions { get; }
 
         public UnitOfWork(DataContext context)
         {
             _context = context;
             Products = new ProductRepository(_context);
+            Promotions = new PromotionRepository(_context);
         }
 
 

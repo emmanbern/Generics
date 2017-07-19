@@ -1,6 +1,6 @@
 ﻿using Model;
 
-namespace Interfaces
+namespace Interfaces.Repositories
 {
     public interface IProductRepository : IBaseRepository<Product>
     {

@@ -1,4 +1,8 @@
+using DAL.UnitOfWorks;
+using Interfaces.DAL;
+using Interfaces.Service;
 using Microsoft.Practices.Unity;
+using Services.Products;
 using System.Web.Mvc;
 using Unity.Mvc5;
 
@@ -15,6 +19,8 @@ namespace TrainingApp
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<IProductService, ProductService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

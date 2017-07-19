@@ -1,11 +1,12 @@
-﻿using Interfaces;
+﻿using Interfaces.Repositories;
 using System;
 
-namespace DAL.UnitOfWorks
+namespace Interfaces.DAL
 {
     public interface IUnitOfWork : IDisposable
     {
         IProductRepository Products { get; }
+        IPromotionRepository Promotions { get; }
         int Complete();
     }
 }
