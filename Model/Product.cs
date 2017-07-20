@@ -1,6 +1,8 @@
-﻿namespace Model
+﻿using Model.Extensions;
+
+namespace Model
 {
-    public class Product
+    public class Product : IActive
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }

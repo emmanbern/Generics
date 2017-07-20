@@ -20,12 +20,15 @@ namespace DAL.Migrations
             //
             context.Products.AddOrUpdate(
              new Product { IsActive = true, IsVisible = false },
-             new Product { IsVisible = true, IsActive = false }
+             new Product { IsVisible = true, IsActive = false },
+             new Product { IsVisible = true, IsActive = true },
+             new Product { IsVisible = false, IsActive = false }
             );
 
             context.Promotions.AddOrUpdate(
             new Promotion { IsActive = true, IsVisible = false },
-            new Promotion { IsVisible = true, IsActive = false }
+            new Promotion { IsVisible = true, IsActive = false },
+            new Promotion { IsActive = true, IsVisible = true }
            );
             //
         }

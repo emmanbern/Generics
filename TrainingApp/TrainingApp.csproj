@@ -205,6 +205,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -300,6 +301,10 @@
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{5D609DD6-3EA2-424F-B2F8-E66F96A01D3F}</Project>
       <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{ad05506b-36f1-4690-8375-8148c5fe57fa}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{84450997-3619-4460-960A-47EA72A68079}</Project>

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContexts\DataContext.cs" />
+    <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Mapping\ProductMap.cs" />
     <Compile Include="Mapping\PromotionMap.cs" />
     <Compile Include="Migrations\201707191007240_InitialMigration.cs" />

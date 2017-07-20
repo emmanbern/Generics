@@ -19,10 +19,12 @@ namespace TrainingApp
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
+
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterType<IProductService, ProductService>();
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }
+
     }
 }

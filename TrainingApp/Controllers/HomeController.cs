@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Interfaces.Service;
 using System.Web.Mvc;
 
 namespace TrainingApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        IProductService _productService;
+
+        public HomeController() : base() { }
+
+        public HomeController(IProductService productService)
+        {
+            _productService = productService;
+        }
         public ActionResult Index()
         {
+            var products = _productService.GetProductsActive();
             return View();
         }
 

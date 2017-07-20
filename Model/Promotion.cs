@@ -1,6 +1,8 @@
-﻿namespace Model
+﻿using Model.Extensions;
+
+namespace Model
 {
-    public class Promotion
+    public class Promotion : IActive
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }
