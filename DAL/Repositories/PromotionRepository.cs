@@ -17,7 +17,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Promotion> GetAllPromotionActive()
         {
-            return Context.Promotions.FilterGeneric().ToList();
+            return Context.Promotions.WhereActiveAndVisible().ToList();
         }
 
 
