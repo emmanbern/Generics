@@ -23,7 +23,11 @@ namespace DAL.Repositories
         public IEnumerable<Product> GetAllActive()
         {
             var all = _context.Products.ToList();
-            return _context.Products.FilterGeneric().ToList();
+            return _context.Products
+                .WhereActive()
+                .WhereVisible()
+                .ToList();
+            //return _context.Products.WhereActiveAndVisible().ToList();
         }
 
     }

@@ -2,7 +2,7 @@
 
 namespace Model
 {
-    public class Product : IActive
+    public class Product : IActive, IVisible
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }
