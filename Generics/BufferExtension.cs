@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Generics
@@ -8,7 +9,7 @@ namespace Generics
 
         public delegate void Printer<T>(T data);
 
-        public static void Dump<T>(this IBuffer<T> buffer, Printer<T> print)
+        public static void Dump<T>(this IBuffer<T> buffer, Action<T> print)
         {
             foreach (var item in buffer)
             {

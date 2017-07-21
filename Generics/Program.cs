@@ -5,21 +5,32 @@ namespace Generics
 {
     class Program
     {
-        static void ConsoleWrite(double data)
-        {
-            Console.WriteLine(data);
-        }
 
         static void Main(string[] args)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
-            var buffer = new Buffer<double>();
 
+            //Exemple de délégate avec lambda
+            Action<bool> print = d => Console.WriteLine(d);
+
+            //Delegate avec un type de retour.
+            Func<double, double> square = d => d * d;
+
+            //Delegate avec deux parametre **le dernier parametre est toujour le type de retour.
+            Func<double, double, double> addition = (x, y) => x + y;
+
+            //Predicate **retourne toujour un boolean.
+            Predicate<double> isLessThanTen = d => d < 10;
+
+            //Permet de chainer les types de delegate.
+            print(isLessThanTen(addition(square(3), 3)));
+
+            var buffer = new Buffer<double>();
 
             processInput(buffer);
 
 
-            buffer.Dump(ConsoleWrite);
+            buffer.Dump(d => Console.WriteLine(d));
 
             var asInts = buffer.AsEnumerableOf<double, int>();
 
