@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buffer.cs" />
+    <Compile Include="BufferExtension.cs" />
     <Compile Include="CircularBufferGeneric.cs" />
     <Compile Include="CircularBuffer.cs" />
     <Compile Include="IBuffer.cs" />

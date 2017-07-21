@@ -1,19 +1,36 @@
 ﻿using System;
+using System.Globalization;
+using static Generics.BufferExtension;
 
 namespace Generics
 {
     class Program
     {
+        static void ConsoleWrite(object data)
+        {
+            Console.WriteLine(data);
+        }
+
         static void Main(string[] args)
         {
-            var buffer = new CircularBuffer<double>(capacity: 3);
+            System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+            var buffer = new Buffer<double>();
+
 
             processInput(buffer);
 
-            foreach (var item in buffer)
-            {
-                Console.WriteLine(buffer);
-            }
+            Printer consoleOut = new Printer(ConsoleWrite);
+
+            buffer.Dump(consoleOut);
+
+            var asInts = buffer.AsEnumerableOf<double, int>();
+
+
+            //A été ajouté à la méthode d'extension
+            //foreach (var item in buffer)
+            //{
+            //    Console.WriteLine(buffer);
+            //}
 
             processBuffer(buffer);
 

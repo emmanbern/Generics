@@ -8,7 +8,8 @@ namespace Generics
 
         void Write(T value);
 
-        IEnumerable<TOutput> AsEnumerableOf<TOutput>();
+        //Creation d'une méthode d'extension
+        //IEnumerable<TOutput> AsEnumerableOf<TOutput>();
 
         T Read();
     }
