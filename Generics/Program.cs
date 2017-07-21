@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using static Generics.BufferExtension;
 
 namespace Generics
 {
     class Program
     {
-        static void ConsoleWrite(object data)
+        static void ConsoleWrite(double data)
         {
             Console.WriteLine(data);
         }
@@ -19,9 +18,8 @@ namespace Generics
 
             processInput(buffer);
 
-            Printer consoleOut = new Printer(ConsoleWrite);
 
-            buffer.Dump(consoleOut);
+            buffer.Dump(ConsoleWrite);
 
             var asInts = buffer.AsEnumerableOf<double, int>();
 
